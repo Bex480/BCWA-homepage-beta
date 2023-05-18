@@ -1,3 +1,5 @@
+@import url("https://css.gg/css");
+
 body {
     background-color: #F2E5D0;
 
@@ -6,40 +8,31 @@ body {
 
     font: normal 10px "Euclid Ci", Euclid, sans-serif;
 }
-
 .topBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     max-height: 50px;
-
     font-size: 20px;
-
     margin: 15px;
 }
-
 .logo {
     margin-top: 5px;
 }
-
 .searchBar {
     width: 33%;
     border-radius: 10px;
     border: 1px solid grey;
     padding: 20px;
 }
-
 .topBar .profile {
     display: flex;
     flex-direction: row;
 }
-
 .profileText {
     margin-top: 15px;
     margin-left: 10px;
 }
-
 .navBar {
     display: flex;
     flex-direction: row;
@@ -49,7 +42,14 @@ body {
     max-height: 25px;
     font-size: 15px;
 }
-
-.navBar div {
-    margin: 15px;
+.navBar ul, li{
+    display: flex;
+    flex-direction: row;
+}
+.navBar li {
+    list-style-type: none;
+    margin-right: 30px;
+}
+.navBar i {
+    margin: 5px;
 }
