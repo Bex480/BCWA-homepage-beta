@@ -91,4 +91,55 @@ body {
     flex-direction: column;
 
     background-color: azure;
+    padding: 30px;
+    border-radius: 30px;
+    margin-right: 35px;
+}
+.content .picks {
+    display: flex;
+    flex-direction: row;
+}
+.content .top, .bottom {
+    display: flex;
+    flex-direction: row;
+}
+.content img {
+    border-radius: 15px;
+    margin-right: 45px;
+}
+
+:root {
+    --height: 50px;
+    --width: 100%;
+}
+
+.container {
+    width: var(--width);
+    height: var(--height);
+}
+
+.cuboid {
+    width: var(--width);
+    height: var(--height);
+    margin: 0;
+}
+
+.cuboid__face {
+    width: var(--width);
+    height: var(--height);
+    background-color: grey;
+}
+
+.cuboid__face--front {
+}
+
+.cuboid__face--top {
+    transform: translateZ(calc(var(--height) * -0.5)) translateY(calc(var(--height) * -0.5)) rotateX(90deg);
+    height: var(--height);
+}
+
+.cuboid__face--bottom {
+    --extra-height: 3rem;
+    transform: translateZ(calc(var(--depth) * -0.5)) translateY(calc(var(--height) * 0.5)) rotateX(-90deg);
+    height: calc(var(--depth) + var(--extra-height));
 }
