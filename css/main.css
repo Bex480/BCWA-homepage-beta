@@ -7,6 +7,7 @@ body {
     flex-direction: column;
 
     font: normal 10px "Euclid Ci", Euclid, sans-serif;
+    color: #6a5534;
 }
 .topBar {
     display: flex;
@@ -90,56 +91,149 @@ body {
     display: flex;
     flex-direction: column;
 
-    background-color: azure;
+    background-color: #f9f3ee;
     padding: 30px;
     border-radius: 30px;
     margin-right: 35px;
+
+    box-shadow: inset -26px 31px 38px 19px rgba(0,0,0,0.1),inset 0px 10px 15px 0px rgba(0,0,0,0.1);
+}
+.content .top .txt .detailsButton {
+    height: 50px;
+    width: 250px;
+
+    background-color: #FCA72C;
+    color: snow;
+    font-weight: bold;
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    margin-top: 30px;
+
+    box-shadow: -14px 8px 9px 0px rgba(0,0,0,0.1);
+}
+.content .txt {
+    width: 300px;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+.content .txt h3 {
+    color: #c6bdb2;
+    font-size: 15px;
 }
 .content .picks {
     display: flex;
     flex-direction: row;
+
 }
 .content .top, .bottom {
     display: flex;
     flex-direction: row;
+
 }
+.content .bottom {
+    height: 40%;
+    padding-top: 100px;
+}
+.content .top {
+    position: relative;
+    z-index: 15;
+}
+
+.content h1 {
+    font-size: 32px;
+}
+
 .content img {
     border-radius: 15px;
     margin-right: 45px;
+    box-shadow: -58px 29px 24px -7px rgba(0,0,0,0.1);
 }
 
 :root {
-    --height: 50px;
-    --width: 100%;
+    --height: 100px;
+    --width: 75%;
 }
 
 .container {
-    width: var(--width);
-    height: var(--height);
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    padding-top: 250px;
 }
-
 .cuboid {
-    width: var(--width);
-    height: var(--height);
+    width: 100%;
+    height: 60%;
     margin: 0;
 }
-
 .cuboid__face {
     width: var(--width);
     height: var(--height);
-    background-color: grey;
 }
-
 .cuboid__face--front {
-}
+    transform: rotate3d(0, 1, 0, 15deg) translateY(calc(var(--height) * -0.15)) translateX(calc(var(--height) *  0.1));
+    height: calc(var(--height) / 9);
+    background-color: #fffefa;
+    z-index: 12;
+    position: relative;
 
+}
+.cuboid__face--back {
+    transform: rotate3d(0, 1, 0, 15deg) translateY(calc(var(--height) * -1.95)) translateX(calc(var(--height) * -0.118));
+    height: calc(var(--height) / 9);
+    background-color: #e0d0bf;
+    z-index: 7;
+    position: relative;
+}
 .cuboid__face--top {
-    transform: translateZ(calc(var(--height) * -0.5)) translateY(calc(var(--height) * -0.5)) rotateX(90deg);
+    transform: rotate3d(0, 1, 0, 15deg)
+    rotateX(46deg);
     height: var(--height);
+    background: rgb(221,207,186);
+    background: linear-gradient(180deg, rgba(221,207,186,1) 0%, rgba(251,246,237,1) 100%);
+    z-index: 9;
+    position: relative;
+}
+.cuboid__face--bottom {
+    transform: rotate3d(0, 1, 0, 15deg) rotateX(46deg) translateX(25px) translateY(-144px);
+    background: rgb(224,208,191);
+    background: linear-gradient(180deg, rgba(224,208,191,1) 0%, rgba(251,246,237,1) 100%);
+    z-index: 8;
+    position: relative;
+}
+.content .shadow{
+    background: rgb(251,223,192);
+    background: linear-gradient(180deg, rgba(251,223,192,1) 0%, rgba(255,238,218,0) 100%);
+    height: calc(var(--height) * 1.4);
+    transform: rotate3d(0, 1, 0, -15deg) rotateX(46deg) translateX(-85px) translateY(-304px);
+    position: relative;
+    z-index: 1;
 }
 
-.cuboid__face--bottom {
-    --extra-height: 3rem;
-    transform: translateZ(calc(var(--depth) * -0.5)) translateY(calc(var(--height) * 0.5)) rotateX(-90deg);
-    height: calc(var(--depth) + var(--extra-height));
+.content .top .picks #book1 {
+    height: 100%;
+    width: 35%;
+    align-self: flex-end;
+}
+
+.content .top .picks #book2 {
+    height: 80%;
+    width: 25%;
+    align-self: flex-end;
+}
+
+.content .top .picks #book3 {
+    height: 65%;
+    width: 20%;
+    align-self: flex-end;
+}
+
+.content .bottom .picks img{
+    height: 90%;
+    width: 15%;
+    margin-right: 65px;
 }
